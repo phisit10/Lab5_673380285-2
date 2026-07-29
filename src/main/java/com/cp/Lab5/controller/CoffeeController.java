@@ -24,13 +24,8 @@ public class CoffeeController {
         return ResponseEntity.ok(coffeeService.getAllCoffees());
     }
 
-    // [Bonus] ค้นหาตามชื่อ (วางไว้ก่อน /{id})
-    @GetMapping("/search")
-    public ResponseEntity<List<Coffee>> searchCoffees(@RequestParam String name) {
-        return ResponseEntity.ok(coffeeService.searchByName(name));
-    }
 
-    // 2. GET ตาม id (+ Bonus 404)
+    // 2. GET ตาม id 
     @GetMapping("/{id}")
     public ResponseEntity<Coffee> getCoffeeById(@PathVariable Long id) {
         return coffeeService.getCoffeeById(id)
@@ -45,7 +40,7 @@ public class CoffeeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
-    // 4. PUT แก้ไขตาม id (+ Bonus 404)
+    // 4. PUT แก้ไขตาม id
     @PutMapping("/{id}")
     public ResponseEntity<Coffee> updateCoffee(@PathVariable Long id, @RequestBody Coffee coffeeDetails) {
         return coffeeService.updateCoffee(id, coffeeDetails)
@@ -53,7 +48,7 @@ public class CoffeeController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // 5. DELETE ลบตาม id (+ Bonus 404)
+    // 5. DELETE ลบตาม id 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCoffee(@PathVariable Long id) {
         if (coffeeService.deleteCoffee(id)) {

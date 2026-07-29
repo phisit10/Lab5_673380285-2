@@ -15,7 +15,7 @@ public class CoffeeService {
     private final AtomicLong idCounter = new AtomicLong(3);
 
     public CoffeeService() {
-        // เพิ่มข้อมูลตัวอย่าง 2 รายการเริ่มต้น
+        // ข้อมูลตัวอย่าง 2 รายการ
         coffeeList.add(new Coffee(1L, "Espresso", 45.0));
         coffeeList.add(new Coffee(2L, "Latte", 55.0));
     }
@@ -51,10 +51,4 @@ public class CoffeeService {
         return coffeeList.removeIf(c -> c.getId().equals(id));
     }
 
-    // [Bonus] ฟีเจอร์ค้นหาตามชื่อ
-    public List<Coffee> searchByName(String name) {
-        return coffeeList.stream()
-                .filter(c -> c.getName().toLowerCase().contains(name.toLowerCase()))
-                .collect(Collectors.toList());
-    }
 }
