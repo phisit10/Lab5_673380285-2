@@ -17,7 +17,7 @@
 
 ### ขั้นตอนที่ 1 — เปิด 2 Terminal ใน VS Code
 
-[#เปิด-2-terminal]
+[#เปิด-2-terminal](#เปิด-2-terminal)
 
 เปิด Terminal ใน VS Code แล้วกดปุ่ม **Split Terminal** (หรือ `Ctrl + Shift + 5`) เพื่อแบ่งเป็น 2 หน้าต่างในพื้นที่เดียวกัน:
 
@@ -33,7 +33,7 @@
 
 ### ขั้นตอนที่ 2 — Clean และ Compile โปรเจกต์ (Terminal 1)
 
-[#clean-and-compile]
+[#clean-and-compile](#clean-and-compile)
 
 ก่อนรันเซิร์ฟเวอร์ ให้เคลียร์ของเก่าและคอมไพล์โค้ดใหม่ก่อน เพื่อลดปัญหา cache หรือ class ค้าง:
 
@@ -50,7 +50,7 @@ mvn clean compile
 
 ### ขั้นตอนที่ 3 — รันเซิร์ฟเวอร์ (Terminal 1)
 
-[#run-server]
+[#run-server](#run-server)
 
 ```bash
 mvn spring-boot:run
